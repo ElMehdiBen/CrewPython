@@ -1,0 +1,8 @@
+{
+    "api_url" : "https://hiring.crew.work/v1/talents",
+    "mongo_url" : "mongodb+srv://crewdb:Opsss112@cluster0.xicjy.mongodb.net/test?authSource=admin&replicaSet=atlas-uhjhzf-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true",
+    "mongo_db" : "crew",
+    "mongo_collection" : "talents",
+    "auth_user" : "crew",
+    "auth_secret" : "crew-secret"
+}
