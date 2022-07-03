@@ -37,7 +37,7 @@ def get_talents(username: str = Depends(auth.authenticate)):
 def insert_talent(talent: Talent, username: str = Depends(auth.authenticate)):
     talents = utils.mongo_connect_talents()
     talent = talent.dict()
-    talent["_id"] = ObjectId(talent["id"])
+    talent["_id"] = talent["id"]
     del talent["id"]
     try:
         talents.insert_one(talent)
