@@ -4,9 +4,9 @@ import json
 with open("../configs.json", "r") as config_file:
     configs = json.load(config_file)
 
-def mongo_connect(CONNECTION_STRING):
+def mongo_connect(connection_string):
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
-    client = MongoClient(CONNECTION_STRING)
+    client = MongoClient(connection_string)
 
     # Create the database for our example (we will use the same database throughout the tutorial
     return client

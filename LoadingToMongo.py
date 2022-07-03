@@ -11,13 +11,13 @@ def get_talents(url):
         response = requests.request("GET", url, headers=headers, data=payload)
         response.raise_for_status()
     except Exception as e:
-        raise e
+        print("Error: " + str(e))
 
     return response.json()
 
-def mongo_connect(CONNECTION_STRING):
+def mongo_connect(connection_string):
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
-    client = MongoClient(CONNECTION_STRING)
+    client = MongoClient(connection_string)
 
     # Create the database for our example (we will use the same database throughout the tutorial
     return client
