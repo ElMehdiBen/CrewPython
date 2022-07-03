@@ -1,6 +1,4 @@
-from typing import Optional
 from fastapi import APIRouter, Depends
-from loguru import logger
 from pydantic import BaseModel
 from auth import main as auth
 from talents import utils
