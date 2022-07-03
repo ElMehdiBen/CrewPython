@@ -29,14 +29,5 @@ def read_root(username: str = Depends(auth.authenticate)):
 def read_current_user(username: str = Depends(auth.authenticate)):
     return {"username": username}
 
-# implementing unit tests
-client = TestClient(app)
-
-def test_read_main():
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == { "Result": "Hello Everyone, This is Archipel Cognitive Python Backend" }
-
-
 if __name__ == '__main__':
     uvicorn.run("main:app", host = '0.0.0.0', port = 1005, reload = True)
