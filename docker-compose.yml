@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+
+  crewpython:
+    image: elmb/crewpython
+    ports:
+      - 1006:1005
+    restart: always
