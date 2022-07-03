@@ -36,5 +36,7 @@ def get_talents(username: str = Depends(auth.authenticate)):
 @router.post("/insertOne/")
 def insert_talent(talent: Talent, username: str = Depends(auth.authenticate)):
     talents = utils.mongo_connect_talents()
+    talent["_id"] = talent["id"]
+    del talent["id"]
     talents.insert_one(talent.dict())
     return { "message" : "talent inserted" }
