@@ -18,8 +18,8 @@ COPY ./app ./app
 
 COPY ./ ./
 
+WORKDIR /app
 # RUN performs a command execution on CMD, this one below installs Python requirements
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-WORKDIR /app
 CMD ["python", "main.py"]
