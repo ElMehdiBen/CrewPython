@@ -5,7 +5,7 @@ from auth import main as auth
 from talents import utils
 
 class Talent(BaseModel):
-    _id: str
+    id: str
     firstName: str
     lastName: str
     picture: str
@@ -36,8 +36,11 @@ def get_talents(username: str = Depends(auth.authenticate)):
 @router.post("/insertOne/")
 def insert_talent(talent: Talent, username: str = Depends(auth.authenticate)):
     talents = utils.mongo_connect_talents()
+    talent = talent.dict()
+    talent["_id"] = ObjectId(talent["id"])
+    del talent["id"]
     try:
-        talents.insert_one(talent.dict())
+        talents.insert_one(talent)
     except Exception as e:
         raise HTTPException(status_code = 404, detail = "Error: " + str(e))
     return { "message" : "talent inserted" }
