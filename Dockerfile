@@ -11,11 +11,15 @@ FROM python:3.8
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Creating a directory called apis inside the container and set workdir
-RUN mkdir /app
-WORKDIR /app
+RUN mkdir ./app
+
+# Copying all file from outside folder to inside folder (in our case both are called apis)
+COPY ./app ./app
 
 COPY ./ ./
 
 # RUN performs a command execution on CMD, this one below installs Python requirements
 RUN pip3 install --no-cache-dir -r requirements.txt
+
+WORKDIR /app
+CMD ["python", "main.py"]

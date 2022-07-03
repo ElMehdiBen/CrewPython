@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import requests, json
 
-with open("conf.json", "r") as config_file:
+with open("configs.json", "r") as config_file:
     configs = json.load(config_file)
 
 def get_talents(url):

@@ -2,7 +2,7 @@ import secrets, json
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
-with open("../conf.json", "r") as config_file:
+with open("../configs.json", "r") as config_file:
     configs = json.load(config_file)
 
 security = HTTPBasic()
