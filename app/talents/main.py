@@ -30,7 +30,6 @@ def check_health():
 @router.get("/getAll/")
 def get_talents(username: str = Depends(auth.authenticate)):
     talents = utils.mongo_connect_talents()
-    print(talents.find())
     return [talent for talent in talents.find({},{'_id': 0})]
 
 @router.post("/insertOne/")
