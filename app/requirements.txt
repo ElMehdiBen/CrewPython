@@ -3,3 +3,4 @@ dnspython
 fastapi
 pydantic
 uvicorn
+requests
