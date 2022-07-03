@@ -31,6 +31,10 @@ if __name__ == "__main__":
 
     try:
         talents = get_talents(configs["api_url"])
+        # replace field id with _id for all talents
+        for talent in talents:
+            talent["_id"] = talent["id"]
+            del talent["id"]
         collection.insert_many(talents)
     except Exception as e:
         print(e)
