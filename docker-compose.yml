@@ -5,5 +5,5 @@ services:
   crewpython:
     build: ./
     ports:
-      - 1006:1005
+      - 1111:1005
     restart: always
