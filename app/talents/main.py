@@ -5,7 +5,7 @@ from auth import main as auth
 from talents import utils
 
 class Talent(BaseModel):
-    _id: ObjectId
+    _id: str
     firstName: str
     lastName: str
     picture: str
